@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" src="#">
+    <style>
+      .btn-add-item {
+        float: left;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <% unless session[:username].nil? %>
+      <h2>Welcome, <%= @name %>!</h2>
+      <% if session[:username].eql? 'admin' %>
+        <div class="btn-add-item">
+          <a href="/items/new">
+            <input type="button" value="Add item">
+          </a>
+        </div>
+      <% else %>
+        <div class="btn-add-item">
+          <a href="/items">
+            <input type="button" value="View item">
+          </a>
+        </div>
+      <% end %>
+      <div class="btn-log-out">
+        <form action="/logout" method="POST">
+          <input type="submit" value="Log out">
+        </form>
+      </div>
+    <% else %>
+      <h2>Learn Sinatra with <%= @name %>!</h2>
+      <a href="/login">
+        <input type="button" value="Log in">
+      </a>
+    <% end %>
+  </body>
+</html>

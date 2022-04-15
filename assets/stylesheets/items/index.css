@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+.title-table{
+  background-color: #009879;
+  color: #ffffff;
+  padding: 15px 20px;
+}
+.title-table h3 {
+  font-size: 35px;
+}
+.items-table{
+  margin: 25px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+.items-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.items-table th, td {
+  padding: 12px 20px;
+}

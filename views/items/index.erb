@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" src="#">
+    <style>
+      * {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .title-table{
+      background-color: #009879;
+      color: #ffffff;
+      padding: 15px 20px;
+    }
+    .title-table h3 {
+      font-size: 35px;
+    }
+    .items-table{
+      margin: 25px 0;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .items-table thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+    }
+    
+    .items-table th, td {
+      padding: 12px 20px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="title-table">
+      <h3>List of Items</h3>
+    </div>
+    <% unless @items.nil? %>
+      <table class="items-table">
+        <thead>
+          <th>No</th>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>Price</th>
+        </thead>
+        <tbody>
+        <% @items.each_with_index do |item, index| %>
+          <tr>
+            <td><%= index += 1 %></td>
+            <td><%= item[:name] %></td>
+            <td><%= item[:category] %></td>
+            <td>Rp<%= item[:price] %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>No items added.</p>
+    <% end %>
+  </body>
+</html>
